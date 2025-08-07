@@ -61,11 +61,11 @@ public class MultilevelCacheSystem {
      * @param capacity the maximum allowed number of entries in the cache
      */
     private void evictIfNeeded(Map<String, String> cache, int capacity) {
-        if (cache.size() >= capacity) {
+        if (capacity > 0 && cache.size() >= capacity) {
             Iterator<Map.Entry<String, String>> it = cache.entrySet().iterator();
             Map.Entry<String, String> oldest = it.next();
             it.remove();
-            evictToL2(oldest.getKey(), oldest.getValue());
+            if (cache == l1) evictToL2(oldest.getKey(), oldest.getValue());
         }
     }
 
