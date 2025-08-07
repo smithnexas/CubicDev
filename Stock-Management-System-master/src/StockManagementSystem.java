@@ -23,6 +23,17 @@ class courseWork{
 					System.err.println(e.getMessage());
 					}
 			}
+	/**
+	 * Displays the login page and prompts the user to enter their username and password.
+	 * Validates the entered credentials against the stored values in the 'cred' array.
+	 * If the username or password is incorrect, prompts the user to try again.
+	 * Upon successful authentication, clears the console and navigates to the home page.
+	 *
+	 * Assumes the existence of:
+	 * - A Scanner object named 'input' for reading user input.
+	 * - A String array 'cred' where cred[0] is the valid username and cred[1] is the valid password.
+	 * - Methods 'clearConsole()' and 'homePage()' for navigation.
+	 */
 	public static void loginPage(){
 		
 		System.out.println("+-----------------------------------------------------------------+");

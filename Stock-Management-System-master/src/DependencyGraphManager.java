@@ -6,6 +6,11 @@ public class DependencyGraphManager {
     private final Set<String> visited = new HashSet<>();
     private final List<String> sortedModules = new ArrayList<>();
 
+    /**
+     * Adds a new module to the dependency graph if it does not already exist.
+     *
+     * @param module the name of the module to add to the graph
+     */
     public void addModule(String module) {
         if (!graph.containsKey(module)) {
             graph.put(module, new HashSet<>());
