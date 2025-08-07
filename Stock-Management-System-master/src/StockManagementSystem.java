@@ -23,6 +23,17 @@ class courseWork{
 					System.err.println(e.getMessage());
 					}
 			}
+	/**
+	 * Displays the login page and prompts the user to enter their username and password.
+	 * Validates the entered credentials against the stored values in the 'cred' array.
+	 * If the username or password is incorrect, prompts the user to try again.
+	 * Upon successful authentication, clears the console and navigates to the home page.
+	 *
+	 * Assumes the existence of:
+	 * - A Scanner object named 'input' for reading user input.
+	 * - A String array 'cred' where cred[0] is the valid username and cred[1] is the valid password.
+	 * - Methods 'clearConsole()' and 'homePage()' for navigation.
+	 */
 	public static void loginPage(){
 		
 		System.out.println("+-----------------------------------------------------------------+");
@@ -58,6 +69,13 @@ class courseWork{
 		homePage();
 			
 	}
+	/**
+	 * Displays the home page menu of the IJSE Stock Management System.
+	 * Presents the user with options to change credentials, manage suppliers,
+	 * manage stock, log out, or exit the system. Handles user input and
+	 * navigates to the corresponding functionality based on the selected option.
+	 * Utilizes console output for the menu and input for user selection.
+	 */
 	public static void homePage(){
 		System.out.println("+-----------------------------------------------------------------+");
         System.out.println("| \t\tWELCOME TO IJSE STOCK MANAGEMENT SYSTEM\t\t  |");
@@ -180,6 +198,21 @@ class courseWork{
 				break;
 		}	
 	}
+	/**
+	 * Adds a new supplier to the system.
+	 * <p>
+	 * This method prompts the user to enter a supplier ID and name, checks for duplicate IDs,
+	 * and adds the supplier to the supplier array. If the supplier ID already exists, the user
+	 * is prompted to enter a different ID. After successfully adding a supplier, the user is
+	 * asked if they want to add another supplier. If so, the process repeats; otherwise, the
+	 * method returns to the supplier management menu.
+	 * </p>
+	 * <p>
+	 * Note: This method relies on user input from the console and modifies the global
+	 * <code>supplier</code> array. It also calls <code>clearConsole()</code> and
+	 * <code>supplierManage()</code> methods as part of its workflow.
+	 * </p>
+	 */
 	public static void addSupplier(){
 		
 		System.out.println("+-----------------------------------------------------------------+");
